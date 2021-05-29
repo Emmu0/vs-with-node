@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="main">
+
+
+        <div id="left">
+
+            <h4><span>folder</span>
+                <div class="icon">
+                    <i id="add" onclick="openForm()" class="fas fa-plus"></i>
+                    <a href="/"> <i class="fas fa-redo"></i></a>
+                </div>
+            </h4>
+            <h5><i class="far fa-folder"></i><span>upload</span></h5>
+            <ul>
+
+                <% files.forEach(function(file){ %>
+                    <a href=<%="/fileopen"+File %>>
+                        <li>
+                            <%=file%><i class="far fa-trash-alt"></i>
+                        </li>
+                    </a>
+                    <%})%>
+            </ul>
+        </div>
+
+        <div id="right">
+
+            <div id="terminal">
+                <span>
+                    hello.txt
+                </span> <a href="/"><i class="far fa-times-circle"></i></a>
+                <form action="">
+                    <textarea id="" cols="30" rows="10" placeholder="write something..."></textarea>
+                    <input type="submit" value="save file">
+                </form>
+            </div>
+
+            <div id="detail">
+                <p>Custom terminal pannel</p>
+                <li>emmual</li>
+            </div>
+        </div>
+        <div id="creation">
+            <h3>Create Filename</h3>
+            <form action="/createfile" method="POST">
+                <input type="text" name="filename" placeholder="File name...">
+                <input type="submit" value="OK">
+                <button id="cancle">Cancle</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // function form() {
+        //     var a = document.getElementById("adad");
+        //     document.getElementById("creation") = a;
+        // }
+
+
+        let addpng = document.querySelector("#add");
+        let form = document.querySelector("#creation");
+
+
+        addpng.addEventListener('click',function() {
+            form.style.display = 'initial';
+        })
+
+
+    </script>
+
+</body>
+
+</html>
